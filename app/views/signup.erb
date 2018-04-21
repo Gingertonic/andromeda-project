@@ -3,15 +3,32 @@
   <head>
     <meta charset="utf-8">
       <link rel="stylesheet" href="/stylesheets/reset.css" />
-      <link rel="stylesheet" href="/stylesheets/main.css" />
+      <link rel="stylesheet" href="/stylesheets/signup.css" />
     <title></title>
   </head>
   <body>
     <div class="main">
+      <nav>
+        <a href="/">home</a>
+      </nav>
       <div class="jumbotron">
-        <h1>Andromeda Project</h1>
-        <a href="/signup"><span class="button">Become A Space Explorer</span></a>
-        <a href="/login"><span class="button">Log In</span></a>
+        <div class="intro">
+          <p>The year is 2142 and we have recently developed the Milkyway’s first FTL drive. This great feat of engineering has allowed us to initiate intergalactic travel for the very first time in human history. With colonies on Mars and a base on the moon, we have explored, expanded, and mapped out much of our home galaxy, the MIlkyway. The Andromeda Project is looking for a brave and skilled team of explorers to map out our neighboring galaxy, Andromeda. We will be looking to identify heretofore unknown planets and potential alien life. Will you join us on this very important mission?</p>
+        </div>
+
+        <div class="form">
+          <form action="/signup" method="POST">
+            <label>Name:</label>
+            <input type="text" name="" /><br /><br /><br />
+            <label>Email:</label>
+            <input type="text" name="" /><br /><br /><br />
+            <label>Username:</label>
+            <input type="text" name="" /><br /><br /><br />
+            <label>Password:</label>
+            <input type="password" name="" /><br /><br /><br />
+            <input type="submit" value="Sign Up"/>
+          </form>
+        </div>
       </div>
 
     </div>
