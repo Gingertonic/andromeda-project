@@ -1,21 +1,22 @@
-html {
-  padding: 0;
-  margin: 0;
-  border: 0;
+html, body {
   font-size: 16px;
+  height: 100%;
 }
 
 body {
   background-image: url("../images/space.jpeg");
   background-size: cover;
+  width: 100%;
 }
 
 h1 {
   color: white;
   font-family: "OCR A Std";
-  font-size: 2.8rem;
+  font-size: 2.4rem;
+  font-weight: 100;
+  letter-spacing: 1px;
   text-align: center;
-  opacity: .6;
+  opacity: .76;
 }
 
 .main {
@@ -23,6 +24,7 @@ h1 {
   justify-content: center;
   height: 100%;
   width: 100%;
+  border: solid white 1px;
 }
 
 .jumbotron {
@@ -31,21 +33,17 @@ h1 {
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-top: 15rem;
 }
 
-span {
+.button {
   color: white;
   font-family: "Baloo";
   font-size: .9rem;
   letter-spacing: 2px;
   background-color: rgba(59, 50, 67, 1);
-  border-radius: 25px;
-  padding: 1.2rem;
+  border-radius: 40px;
+  padding: 1.4rem 2rem;
   opacity: .7;
   margin-top: 2rem;
+  display: block;
 }
-
-/* span.first {
-  opacity: .7;
-} */

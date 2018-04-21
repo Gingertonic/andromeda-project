@@ -8,7 +8,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    erb :layout
+    erb :home
+  end
+
+  get "/signup" do
+    erb :signup
+  end
+
+  get "/login" do
+    erb :login
   end
 
 end
