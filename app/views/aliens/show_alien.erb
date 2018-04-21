@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="/stylesheets/reset.css" />
+      <link rel="stylesheet" href="/stylesheets/profile.css" />
+    <title></title>
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <a href="/profile">profile</a>
+        <a href="/logout">logout</a>
+      </nav>
+
+      <div class="profile">
+
+        <h1><%=@alien.name%></h1>
+
+        <p>Type: <%=@alien.type%></p>
+        <p>Description: <%=@alien.description%></p>
+        <p>Planet: <%=@alien.planet%></p>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+
+  </body>
+</html>
