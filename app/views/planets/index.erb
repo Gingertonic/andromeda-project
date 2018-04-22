@@ -7,17 +7,18 @@
     <title></title>
   </head>
   <body>
+    <nav id="nav">
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </nav>
     <div class="main">
-      <nav>
-        <a href="/profile">profile</a>
-        <a href="/logout">logout</a>
-      </nav>
+
 
       <div class="profile">
         <h1>Planets</h1>
-        <p>
+        <p id="index">
           <%@planets.each do |planet| %>
-          <%= planet.name %>
+          <a href="/planets/<%=planet.slug%>"><%=planet.name%><br /><br />
           <%end%>
         </p>
 

@@ -7,19 +7,21 @@
     <title></title>
   </head>
   <body>
+    <nav id="nav">
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </nav>
     <div class="main">
-      <nav>
-        <a href="/profile">profile</a>
-        <a href="/logout">logout</a>
-      </nav>
 
-      <div class="profile">
+      <div class="profile" id="create-edit">
 
         <h1><%=@alien.name%></h1>
 
-        <p>Type: <%=@alien.type%></p>
-        <p>Description: <%=@alien.description%></p>
-        <p>Planet: <%=@alien.planet%></p>
+        <p id="show">Type: Alien Type</p>
+        <p id="show">Description: Alien Description</p>
+        <p id="show">Planets: </p>
+
+
         </div>
 
       </div>

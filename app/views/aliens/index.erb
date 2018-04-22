@@ -7,19 +7,20 @@
     <title></title>
   </head>
   <body>
+    <nav id="nav">
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </nav>
     <div class="main">
-      <nav>
-        <a href="/profile">profile</a>
-        <a href="/logout">logout</a>
-      </nav>
+
 
       <div class="profile">
-
         <h1>Aliens</h1>
-
-        <%=@aliens.each do |alien| %>
-        <%= alien.name %>
-        <%end%>
+        <p id="index">
+          <%@aliens.each do |alien| %>
+          <a href="/aliens/<%=alien.slug%>"><%=alien.name%><br /><br />
+          <%end%>
+        </p>
 
       </div>
 

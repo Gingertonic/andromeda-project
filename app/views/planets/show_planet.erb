@@ -7,18 +7,24 @@
     <title></title>
   </head>
   <body>
+    <nav id="nav">
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </nav>
     <div class="main">
-      <nav>
-        <a href="/profile">profile</a>
-        <a href="/logout">logout</a>
-      </nav>
 
-      <div class="profile">
-        <h1><%=@planet.name%></h1>
+      <div class="profile" id="create-edit">
 
-        <p>Type: <%=@planet.type%></p>
-        <p>Description: <%=@planet.description%></p>
-        <p>Alien Life Forms: <%=@planet.aliens.each {|alien| alien.name}%></p>
+        <h1>Planet Name</h1>
+
+        <p id="show">Type: Planet Type</p>
+        <p id="show">Description: Planet Description</p>
+        <p id="show">Alien Life Forms: Jawa, Buttmonger </p>
+
+
+        <a href="/planets/edit"><span class="button" id="edit-button">Edit</span></a>
+        <a href="/planets/delete"><span class="button">Delete</span></a>
+        </div>
 
       </div>
 
