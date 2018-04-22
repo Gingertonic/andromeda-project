@@ -15,10 +15,11 @@
 
       <div class="profile">
         <h1>Planets</h1>
-
-        <%=@planets.each do |planet| %>
-        <%= planet.name %>
-        <%end%>
+        <p>
+          <%@planets.each do |planet| %>
+          <%= planet.name %>
+          <%end%>
+        </p>
 
       </div>
 

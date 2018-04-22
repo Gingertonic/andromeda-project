@@ -3,13 +3,13 @@ class UsersController < ApplicationController
   get "/" do
     erb :home
   end
-  
+
   get "/signup" do
-    erb :signup
+    erb :'users/signup'
   end
 
   get "/login" do
-    erb :login
+    erb :'users/login'
   end
 
   post "login" do
@@ -23,11 +23,11 @@ class UsersController < ApplicationController
   end
 
   get "/profile" do
-    if logged_in?
-      erb :profile
-    else
-      redirect to "/home"
-    end
+    # if logged_in?
+      erb :'users/profile'
+    # else
+    #   redirect to "/home"
+    # end
   end
 
 end

@@ -1,7 +1,12 @@
 class AliensController < ApplicationController
 
   get "/aliens" do
+    @aliens = Alien.all
     erb :'aliens/index'
+  end
+
+  get "/aliens/edit" do
+    erb :'aliens/edit_alien'
   end
 
   get "/aliens/new" do
@@ -13,7 +18,7 @@ class AliensController < ApplicationController
   end
 
   post "/aliens" do
-    redirect to "/aliens/<%=@alien.slug%>"
+    # redirect to "/aliens/<%=@alien.slug%>"
   end
 
 end

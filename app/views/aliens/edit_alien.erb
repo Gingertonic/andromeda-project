@@ -7,25 +7,25 @@
     <title></title>
   </head>
   <body>
+    <nav id="nav">
+      <a href="/profile">profile</a>
+      <a href="/logout">logout</a>
+    </nav>
     <div class="main">
-      <nav>
-        <a href="/profile">profile</a>
-        <a href="/logout">logout</a>
-      </nav>
 
-      <div class="profile">
+      <div class="profile" id="create-edit">
         <h1>Edit Alien</h1>
 
         <div class="form">
           <form action="/signup" method="POST">
-            <label>Name:</label>
+            <label>Name:</label><br />
             <input type="text" name="" /><br /><br /><br />
 
-            <label>Type:</label>
+            <label>Type:</label><br />
             <input type="text" name="" /><br /><br /><br />
 
-            <label>Description:</label>
-            <input type="text" name="" /><br /><br /><br />
+            <label>Description:</label><br />
+            <textarea></textarea><br /><br /><br />
 
             <input type="submit" value="Edit"/>
           </form>

@@ -1,7 +1,11 @@
 class PlanetsController < ApplicationController
 
+  get "/planets/edit" do
+    erb :'planets/edit_planet'
+  end
 
   get "/planets" do
+    @planets = Planet.all
     erb :'planets/index'
   end
 
@@ -14,7 +18,7 @@ class PlanetsController < ApplicationController
   end
 
   post "/planets" do
-    redirect to "/planets/<%=@planet.slug%>"
+    # redirect to "/planets/<%=@planet.slug%>"
   end
 
 end

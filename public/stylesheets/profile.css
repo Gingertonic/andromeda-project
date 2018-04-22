@@ -31,12 +31,14 @@ h1 {
 .profile {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: rgba(59, 50, 67, 1);
   width: 80%;
-  height: 100%;
-
+  height: 80%;
+  opacity: .5;
 }
+
 
 nav {
   width: 100%;
@@ -44,13 +46,23 @@ nav {
   justify-content: flex-end;
   font-size: .75rem;
   height: auto;
+  position: fixed;
+}
+
+#nav a {
+  padding: 1rem;
+  opacity: .76;
 }
 
 a {
   font-family: "Baloo";
   color: white;
   text-decoration: none;
-  padding: 2rem;
+}
+
+#planet, #alien {
+  margin-top: 2rem;
+  color: #e6cccc;
 }
 
 p {
@@ -81,6 +93,33 @@ input[type=submit] {
   background-color: rgba(59, 50, 67, 1);
   border-radius: 40px;
   padding: 1.4rem 2rem;
-  opacity: .7;
+  opacity: .76;
   cursor: pointer;
+}
+
+textarea {
+  border: 2px solid white;
+  border-radius: 4px;
+  height: 5rem;
+  width: 20rem;
+}
+
+#create-edit input[type=text] {
+  width: 15rem;
+}
+
+
+#create-edit input[type=submit] {
+  border: solid white 1px;
+  text-align: center;
+  background-color: white;
+  color: rgba(59, 50, 67, 1);
+  opacity: 1;
+}
+
+#create-edit form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
 }
