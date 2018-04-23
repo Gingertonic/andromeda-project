@@ -13,22 +13,24 @@
     </nav>
     <div class="main">
 
-      <div class="profile" id="create-edit">
+      <div class="profile" id="show-box">
 
-        <h1><%=@planet.name%></h1>
+        <h1 id="show-heading"><%=@planet.name%></h1>
 
-        <p id="show">Classification: <%=@planet.classification%></p>
-        <p id="show">Description: <%=@planet.description%></p>
-        <p id="show">Alien Life Forms:</p>
+        <p id="show-paragraph">Classification: <%=@planet.classification%></p>
+        <p id="show-paragraph">Description:</p>
+        <p id="show-paragraph"><%=@planet.description%></p>
+        <p id="show-paragraph">Alien Life Forms:</p><br />
         <%@planet.aliens.each do |alien|%>
-        <p id="show"><%= alien.name %></p>
-        <p id="show">other alien</p>
-        <p id="show">other alien</p>
-        <%end%></p>
+        <a href="/aliens/<%=alien.slug%>"><%= alien.name %><br /><br />
+        <%end%>
 
 
         <a href="/planets/<%=@planet.slug%>/edit"><span class="button" id="edit-button">Edit</span></a>
-        <a href="/planets/delete"><span class="button">Delete</span></a>
+        <form action="/planets/<%=@planet.slug%>" method="POST">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete" />
+        </form>
         </div>
 
       </div>

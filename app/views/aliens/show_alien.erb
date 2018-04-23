@@ -13,14 +13,22 @@
     </nav>
     <div class="main">
 
-      <div class="profile" id="create-edit">
+      <div class="profile" id="show-box">
 
-        <h1><%=@alien.name%></h1>
+        <h1 id="show-heading"><%=@alien.name%></h1>
 
-        <p id="show">Classification: <%=@alien.classification%></p>
-        <p id="show">Description:</p>
-        <p id="show"><%=@alien.description%></p>
-        <p id="show">Planets: <%=@alien.planet.name%></p>
+        <p id="show-paragraph">Classification: <%=@alien.classification%></p>
+        <p id="show-paragraph">Description:</p>
+        <p id="show-paragraph"><%=@alien.description%></p>
+        <p id="show-paragraph">Planet:</p>
+        <a href="/planets/<%=@alien.planet.slug%>"><br /><br /><%=@alien.planet.name%></a>
+
+        <a href="/aliens/<%=@alien.slug%>/edit"><span class="button" id="edit-button">Edit</span></a>
+        <form action="/aliens/<%=@alien.slug%>" method="POST">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete" />
+        </form>
+        </div>
 
 
         </div>

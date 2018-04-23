@@ -17,15 +17,18 @@
         <h1>Create Alien</h1>
 
         <div class="form">
-          <form action="/signup" method="POST">
+          <form action="/aliens" method="POST">
             <label>Name:</label><br />
-            <input type="text" name="" /><br /><br /><br />
+            <input type="text" name="name" /><br /><br /><br />
 
-            <label>Type:</label><br />
-            <input type="text" name="" /><br /><br /><br />
+            <label>Classification:</label><br />
+            <input type="text" name="classification" /><br /><br /><br />
+
+            <label>Planet:</label><br />
+            <input type="text" name="planet" /><br /><br /><br />
 
             <label>Description:</label><br />
-            <textarea></textarea><br /><br /><br />
+            <textarea name="description"></textarea><br /><br /><br />
 
             <input type="submit" value="Create"/>
           </form>

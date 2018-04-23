@@ -21,13 +21,23 @@ class AliensController < ApplicationController
 
   patch "/aliens/:slug" do
     @alien = Alien.find_by_slug(params[:slug])
-    @alien.update(name: params[:name], classification: params[:classification], description: params[:description])
+    @alien.update(name: params[:name], classification: params[:classification], description: params[:description]) if !params[:name].empty? && !params[:classification].empty? && !params[:name].empty?
     @alien.save
     redirect to "/aliens/#{@alien.slug}"
   end
 
   post "/aliens" do
+    @alien = Alien.create(name: params[:name], classification: params[:classification], description: params[:description]) if !params[:name].empty? && !params[:classification].empty? && !params[:name].empty?
+    @planet = Planet.find_or_create_by(name: params[:planet])
+    @alien.planet_id = @planet.id
+    @alien.save
     redirect to "/aliens/#{@alien.slug}"
+  end
+
+  delete "/aliens/:slug" do
+    @alien = Alien.find_by_slug(params[:slug])
+    @alien.delete
+    redirect to "/profile"
   end
 
 end
