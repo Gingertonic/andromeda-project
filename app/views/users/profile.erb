@@ -9,6 +9,7 @@
   <body>
     <nav id="nav">
       <a href="/">home</a>
+      <a href="/logout">logout</a>
     </nav>
 
     <div class="main">
@@ -16,7 +17,7 @@
 
       <div class="profile">
 
-          <h1 id="welcome-user">Welcome, Username</h1>
+          <h1 id="welcome-user">Welcome, <%=@user.username%></h1>
           <br /><br />
           <p>What discovery would you like to add?</p>
           <a href="/planets/new" id="planet">Planet</a>

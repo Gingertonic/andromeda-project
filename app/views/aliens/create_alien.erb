@@ -8,7 +8,7 @@
   </head>
   <body>
     <nav id="nav">
-      <a href="/profile">profile</a>
+      <a href="/users/<%=current_user.user_slug%>">profile</a>
       <a href="/logout">logout</a>
     </nav>
     <div class="main">
@@ -29,6 +29,10 @@
 
             <label>Description:</label><br />
             <textarea name="description"></textarea><br /><br /><br />
+
+            <% if flash.has?(:message) %>
+              <p id="flash"><%= flash[:message] %></p>
+            <% end %><br />
 
             <input type="submit" value="Create"/>
           </form>

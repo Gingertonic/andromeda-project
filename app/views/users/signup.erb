@@ -18,16 +18,18 @@
 
         <div class="form">
           <form action="/signup" method="POST">
-            <label>Name:</label>
-            <input type="text" name="" /><br /><br /><br />
-            <label>Email:</label>
-            <input type="text" name="" /><br /><br /><br />
             <label>Username:</label>
-            <input type="text" name="" /><br /><br /><br />
+            <input type="text" name="username" /><br /><br /><br />
+            <label>Email:</label>
+            <input type="text" name="email" /><br /><br /><br />
             <label>Password:</label>
-            <input type="password" name="" /><br /><br /><br />
+            <input type="password" name="password" /><br /><br /><br />
+            <% if flash.has?(:message) %>
+              <p id="flash"><%= flash[:message] %></p>
+            <% end %><br />
             <input type="submit" value="Sign Up"/>
           </form>
+
         </div>
       </div>
 

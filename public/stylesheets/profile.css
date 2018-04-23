@@ -203,3 +203,9 @@ textarea {
   margin-top: 4rem;
   text-align: center;
 }
+
+/*Flash Message*/
+
+#flash {
+  font-size: .50rem;
+}
