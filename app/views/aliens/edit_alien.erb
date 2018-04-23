@@ -14,18 +14,19 @@
     <div class="main">
 
       <div class="profile" id="create-edit">
-        <h1>Edit Alien</h1>
+        <h1>Edit <%=@alien.name%></h1>
 
         <div class="form">
-          <form action="/signup" method="POST">
+          <form action="/aliens/<%=@alien.slug%>" method="POST">
+            <input id="hidden" type="hidden" name="_method" value="patch">
             <label>Name:</label><br />
-            <input type="text" name="" /><br /><br /><br />
+            <input type="text" name="name" value="<%=@alien.name%>" /><br /><br /><br />
 
-            <label>Type:</label><br />
-            <input type="text" name="" /><br /><br /><br />
+            <label>Classification:</label><br />
+            <input type="text" name="classification" value="<%=@alien.classification%>" /><br /><br /><br />
 
             <label>Description:</label><br />
-            <textarea></textarea><br /><br /><br />
+            <textarea name="description"><%=@alien.description%></textarea><br /><br /><br />
 
             <input type="submit" value="Edit"/>
           </form>

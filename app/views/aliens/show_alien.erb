@@ -17,9 +17,10 @@
 
         <h1><%=@alien.name%></h1>
 
-        <p id="show">Type: Alien Type</p>
-        <p id="show">Description: Alien Description</p>
-        <p id="show">Planets: </p>
+        <p id="show">Classification: <%=@alien.classification%></p>
+        <p id="show">Description:</p>
+        <p id="show"><%=@alien.description%></p>
+        <p id="show">Planets: <%=@alien.planet.name%></p>
 
 
         </div>
