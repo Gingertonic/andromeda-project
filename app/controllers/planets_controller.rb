@@ -2,7 +2,11 @@ class PlanetsController < ApplicationController
 
   get "/planets" do
     if logged_in?
-      @planets = Planet.all
+      @planets = []
+      Planet.all.each do |planet|
+        if planet.user_id == user_id
+          @planets << planet end
+        end
       erb :'planets/index'
     else
       redirect to "/"
@@ -20,7 +24,7 @@ class PlanetsController < ApplicationController
   post "/planets" do
     if logged_in?
       if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
-        @planet = Planet.create(name: params[:name], classification: params[:classification], description: params[:description])
+        @planet = Planet.create(name: params[:name], classification: params[:classification], description: params[:description], user_id: user_id)
         redirect to "/planets/#{@planet.slug}"
       else
         flash[:message] = "*Please fill out all fields"

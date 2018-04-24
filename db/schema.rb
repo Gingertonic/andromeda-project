@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180421213804) do
+ActiveRecord::Schema.define(version: 20180423235955) do
 
   create_table "aliens", force: :cascade do |t|
     t.string  "name"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(version: 20180421213804) do
   end
 
   create_table "planets", force: :cascade do |t|
-    t.string "name"
-    t.string "classification"
-    t.text   "description"
+    t.string  "name"
+    t.string  "classification"
+    t.text    "description"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

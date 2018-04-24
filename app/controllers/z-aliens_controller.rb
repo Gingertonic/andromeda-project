@@ -2,7 +2,7 @@ class AliensController < ApplicationController
 
   get "/aliens" do
     if logged_in?
-      @aliens = Alien.all
+      @aliens = current_user.aliens
       erb :'aliens/index'
     else
       redirect to "/"
@@ -52,7 +52,7 @@ class AliensController < ApplicationController
     if logged_in?
       if !params[:name].empty? && !params[:classification].empty? && !params[:name].empty?
         @alien = Alien.create(name: params[:name], classification: params[:classification], description: params[:description])
-        @planet = Planet.find_or_create_by(name: params[:planet])
+        @planet = Planet.find_or_create_by(name: params[:planet], user_id: user_id)
         @alien.planet_id = @planet.id
         @alien.save
         redirect to "/aliens/#{@alien.slug}"
