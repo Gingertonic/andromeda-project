@@ -42,9 +42,10 @@ class PlanetsController < ApplicationController
 
   patch "/planets/:slug" do
     if logged_in?
-      if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
+
+      if !name.empty? && !classification.empty? && !description.empty?
         @planet = Planet.find_by_slug(params[:slug])
-        @planet.update(name: params[:name], classification: params[:classification], description: params[:description])
+        @planet.update(name: name, classification: classification, description: description)
         @planet.save
         redirect to "/planets/#{@planet.slug}"
       else
@@ -52,6 +53,7 @@ class PlanetsController < ApplicationController
       end
         @planet = Planet.find_by_slug(params[:slug])
         redirect to "/planets/#{@planet.slug}/edit"
+
     else
       redirect to "/"
     end
@@ -71,7 +73,7 @@ class PlanetsController < ApplicationController
         flash[:message] = "*Please fill out all fields"
       end
         redirect to "/planets/new"
-        
+
     else
       redirect to "/"
     end
