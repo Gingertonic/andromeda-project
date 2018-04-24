@@ -59,8 +59,10 @@ class PlanetsController < ApplicationController
 
   post "/planets" do
     if logged_in?
-      if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
-        @planet = Planet.create(name: params[:name], classification: params[:classification], description: params[:description], user_id: user_id)
+      if Planet.find_by(name: name)
+        flash[:message] = "*Planet already exists"
+      elsif !name.empty? && !classification.empty? && !description.empty?
+        @planet = Planet.create(name: name, classification: classification, description: description, user_id: user_id)
         redirect to "/planets/#{@planet.slug}"
       else
         flash[:message] = "*Please fill out all fields"

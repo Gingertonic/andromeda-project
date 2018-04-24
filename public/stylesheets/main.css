@@ -47,3 +47,7 @@ h1 {
   margin-top: 2rem;
   display: block;
 }
+
+a {
+  text-decoration: none;
+}

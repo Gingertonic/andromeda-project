@@ -68,10 +68,20 @@ body {
   width: 30%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   color: white;
   font-family: "OCR A Std";
   padding-left: 5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  font-size: .8rem;
+}
+
+form label, input {
+  opacity: .76;
 }
 
 input[type=text], input[type=password] {
@@ -110,5 +120,6 @@ a {
 }
 
 #flash {
-  font-size: .50rem;
+  font-size: .60rem;
+  margin-bottom: 2rem;
 }

@@ -3,4 +3,5 @@ class Planet < ActiveRecord::Base
   extend Slugifiable::ClassMethods
   belongs_to :user
   has_many :aliens
+  validates :name, uniqueness: true
 end

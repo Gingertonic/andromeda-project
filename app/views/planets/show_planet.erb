@@ -15,9 +15,9 @@
 
       <div class="profile" id="show-box">
 
-        <h1 id="show-heading"><%=@planet.name%></h1>
+        <h1 id="show-heading"><%=@planet.name.titleize%></h1>
 
-        <p id="show-paragraph">Classification: <%=@planet.classification%></p>
+        <p id="show-paragraph">Classification: <%=@planet.classification.titleize%></p>
         <p id="show-paragraph">Description:</p>
         <p id="show-paragraph"><%=@planet.description%></p>
         <p id="show-paragraph">Alien Life Forms:</p><br />

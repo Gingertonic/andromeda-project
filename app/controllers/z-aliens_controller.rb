@@ -34,9 +34,9 @@ class AliensController < ApplicationController
 
   patch "/aliens/:slug" do
     if logged_in?
-      if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
+      if !name.empty? && !classification.empty? && !description.empty?
         @alien = Alien.find_by_slug(params[:slug])
-        @alien.update(name: params[:name], classification: params[:classification], description: params[:description])
+        @alien.update(name: name, classification: classification, description: description)
         @alien.save
         redirect to "/aliens/#{@alien.slug}"
       else
@@ -50,7 +50,7 @@ class AliensController < ApplicationController
 
   post "/aliens" do
     if logged_in?
-      if !params[:name].empty? && !params[:classification].empty? && !params[:name].empty?
+      if !name.empty? && !classification.empty? && !description.empty?
         @alien = Alien.create(name: params[:name], classification: params[:classification], description: params[:description])
         @planet = Planet.find_or_create_by(name: params[:planet], user_id: user_id)
         @alien.planet_id = @planet.id

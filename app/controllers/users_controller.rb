@@ -15,12 +15,18 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-    @user = User.create(params)
+    @user = User.create(username: username, email: email, password: params[:password])
     if @user.save
       session[:id] = @user.id
       redirect to "/login"
+    elsif User.find_by(username: username)
+      flash[:message] = "* Username unavailable"
+      redirect to '/signup'
+    elsif User.find_by(email: email)
+      flash[:message] = "* Email unavailable"
+      redirect to '/signup'
     else
-      flash[:message] = "Flash message"
+      flash[:message] = "*Please fill out each field"
       redirect to '/signup'
     end
   end
@@ -36,12 +42,16 @@ class UsersController < ApplicationController
 
 
   post "/login" do
-    user = User.find_by(username: params[:username])
-    if user && user.authenticate(params[:password])
+    user = User.find_by(username: username)
+    if user && user.authenticate(password)
     session[:user_id] = user.id
     redirect "/users/profile"
-    else
+    elsif username.empty? || password.empty?
       flash[:message] = "*Please fill out each field"
+    elsif !User.find_by(username: username)
+    flash[:message] = "* Username doesn't exist"
+    elsif !user.authenticate(password)
+    flash[:message] = "* Incorrect password"
     end
     redirect to "/login"
   end

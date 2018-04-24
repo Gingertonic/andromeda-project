@@ -207,5 +207,6 @@ textarea {
 /*Flash Message*/
 
 #flash {
-  font-size: .50rem;
+  font-size: .60rem;
+  margin-bottom: 2rem;
 }

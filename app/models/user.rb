@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_many :aliens, :through => :planets
   has_secure_password
   validates :username, :email, :password, presence: true
-  validates :username, uniqueness: true
+  validates :username, :email, uniqueness: true
 end
