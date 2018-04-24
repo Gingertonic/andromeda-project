@@ -55,6 +55,10 @@ class AliensController < ApplicationController
         flash[:message] = "*Please fill out name field"
         redirect to "/aliens/new"
 
+      elsif planet.empty?
+          flash[:message] = "*Please fill out planet field"
+          redirect to "/aliens/new"
+
       elsif Alien.find_by(name: name)
         flash[:message] = "*Alien already exists"
         redirect to "/aliens/new"
