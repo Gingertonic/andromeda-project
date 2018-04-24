@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
 
 
-  get "/" do
-    erb :home
+  get "/users/:slug" do
+    if logged_in?
+      @user = current_user
+      erb :'users/profile'
+    else
+      redirect to "/"
+    end
   end
 
   get "/signup" do
@@ -10,14 +15,14 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
-      @user = User.create(params)
-      if @user.save
+    @user = User.create(params)
+    if @user.save
       session[:id] = @user.id
       redirect to "/login"
     else
-      flash[:message] = "*Please fill out each field"
+      flash[:message] = "Flash message"
+      redirect to '/signup'
     end
-    redirect to "/signup"
   end
 
 
@@ -28,6 +33,7 @@ class UsersController < ApplicationController
     erb :'users/login'
     end
   end
+
 
   post "/login" do
     user = User.find_by(username: params[:username])
@@ -40,15 +46,6 @@ class UsersController < ApplicationController
     redirect to "/login"
   end
 
-  get "/users/:slug" do
-    if logged_in?
-      @user = current_user
-      erb :'users/profile'
-    else
-      redirect to "/"
-    end
-  end
-
   get '/logout' do
     if logged_in?
       session.clear
@@ -57,5 +54,9 @@ class UsersController < ApplicationController
       redirect to "/"
     end
   end
+
+
+
+
 
 end

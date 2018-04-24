@@ -11,12 +11,12 @@
       <nav>
         <a href="/">home</a>
       </nav>
-      <div class="jumbotron">
+      <div class="section">
         <div class="form">
           <form action="/login" method="POST">
-            <label>Username:</label>
+            <label>Username:</label><br />
             <input type="text" name="username" /><br /><br /><br />
-            <label>Password:</label>
+            <label>Password:</label><br />
             <input type="password" name="password" /><br /><br /><br />
             <% if flash.has?(:message) %>
               <p id="flash"><%= flash[:message] %></p>

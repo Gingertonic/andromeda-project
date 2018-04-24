@@ -11,7 +11,7 @@
       <a href="/">home</a>
     </nav>
     <div class="main">
-      <div class="jumbotron">
+      <div class="section">
         <div class="intro">
           <p>The year is 2142 and we have recently developed the Milkyway’s first FTL drive. This great feat of engineering has allowed us to initiate intergalactic travel for the very first time in human history. With colonies on Mars and a base on the moon, we have explored, expanded, and mapped out much of our home galaxy, the MIlkyway. The Andromeda Project is looking for a brave and skilled team of explorers to map out our neighboring galaxy, Andromeda. We will be looking to identify heretofore unknown planets and potential alien life. Will you join us on this very important mission?</p>
         </div>
@@ -24,9 +24,11 @@
             <input type="text" name="email" /><br /><br /><br />
             <label>Password:</label>
             <input type="password" name="password" /><br /><br /><br />
+
             <% if flash.has?(:message) %>
               <p id="flash"><%= flash[:message] %></p>
             <% end %><br />
+
             <input type="submit" value="Sign Up"/>
           </form>
 

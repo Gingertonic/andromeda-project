@@ -29,7 +29,7 @@ body {
 
 }
 
-.jumbotron {
+.section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@ body {
   padding-left: 5rem;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
     border: 2px solid white;
     border-radius: 4px;
 }

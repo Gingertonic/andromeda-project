@@ -21,19 +21,6 @@ class PlanetsController < ApplicationController
     end
   end
 
-  post "/planets" do
-    if logged_in?
-      if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
-        @planet = Planet.create(name: params[:name], classification: params[:classification], description: params[:description], user_id: user_id)
-        redirect to "/planets/#{@planet.slug}"
-      else
-        flash[:message] = "*Please fill out all fields"
-      end
-        redirect to "/planets/new"
-      else
-        redirect to "/"
-      end
-  end
 
   get "/planets/:slug" do
     if logged_in?
@@ -69,6 +56,21 @@ class PlanetsController < ApplicationController
       redirect to "/"
     end
   end
+
+  post "/planets" do
+    if logged_in?
+      if !params[:name].empty? && !params[:classification].empty? && !params[:description].empty?
+        @planet = Planet.create(name: params[:name], classification: params[:classification], description: params[:description], user_id: user_id)
+        redirect to "/planets/#{@planet.slug}"
+      else
+        flash[:message] = "*Please fill out all fields"
+      end
+        redirect to "/planets/new"
+      else
+        redirect to "/"
+      end
+  end
+
 
 
   delete "/planets/:slug" do
