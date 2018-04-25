@@ -69,6 +69,10 @@ body {
   align-items: center;
 }
 
+form input, label {
+  opacity: .76;
+}
+
 input[type=text], input[type=password] {
     border: 2px solid white;
     border-radius: 4px;
