@@ -17,12 +17,13 @@
 
         <h1 id="show-heading"><%=@planet.name.titleize%></h1>
 
-        <p id="show-paragraph">Classification: <%=@planet.classification.titleize%></p>
+        <p id="show-paragraph">Classification:
+          <%if @planet.classification%> <%=@planet.classification.titleize%><%end%></p>
         <p id="show-paragraph">Description:</p>
         <p id="show-paragraph"><%=@planet.description%></p>
-        <p id="show-paragraph">Alien Life Forms:</p><br />
+        <p id="show-paragraph">Alien Life Forms:</p><br /><br />
         <%@planet.aliens.each do |alien|%>
-        <a href="/aliens/<%=alien.slug%>"><%= alien.name %><br /><br />
+        <a href="/aliens/<%=alien.slug%>"><%= alien.name.titleize %><br /><br />
         <%end%>
 
 

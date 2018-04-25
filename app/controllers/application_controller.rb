@@ -60,6 +60,12 @@ class ApplicationController < Sinatra::Base
        params[:planet].downcase
      end
 
+     #URL Slug
+
+     def slug
+       params[:slug]
+     end
+
   end
 
 

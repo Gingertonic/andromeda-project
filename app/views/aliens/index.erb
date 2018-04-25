@@ -18,7 +18,7 @@
         <h1>Aliens</h1>
         <p id="index">
           <%@aliens.each do |alien| %>
-          <a href="/aliens/<%=alien.slug%>"><%=alien.name%><br /><br />
+          <a href="/aliens/<%=alien.slug%>"><%=alien.name.titleize%><br /><br />
           <%end%>
         </p>
 

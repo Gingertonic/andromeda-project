@@ -20,10 +20,10 @@
           <form action="/aliens/<%=@alien.slug%>" method="POST">
             <input id="hidden" type="hidden" name="_method" value="patch">
             <label>Name:</label><br />
-            <input type="text" name="name" value="<%=@alien.name%>" /><br /><br /><br />
+            <input type="text" name="name" value="<%=@alien.name.titleize%>" /><br /><br /><br />
 
             <label>Classification:</label><br />
-            <input type="text" name="classification" value="<%=@alien.classification%>" /><br /><br /><br />
+            <input type="text" name="classification" value="<%=@alien.classification.titleize%>" /><br /><br /><br />
 
             <label>Description:</label><br />
             <textarea name="description"><%=@alien.description%></textarea><br /><br /><br />

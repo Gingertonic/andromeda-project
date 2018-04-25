@@ -34,8 +34,9 @@ class AliensController < ApplicationController
 
   patch "/aliens/:slug" do
     if logged_in?
+
       if !name.empty? && !classification.empty? && !description.empty?
-        @alien = Alien.find_by_slug(params[:slug])
+        @alien = Alien.find_by_slug(slug)
         @alien.update(name: name, classification: classification, description: description)
         @alien.save
         redirect to "/aliens/#{@alien.slug}"
@@ -44,20 +45,17 @@ class AliensController < ApplicationController
       end
         @alien = Alien.find_by_slug(params[:slug])
         redirect to "/aliens/#{@alien.slug}/edit"
-    else redirect to "/"
+    else
+      redirect to "/"
     end
   end
 
   post "/aliens" do
     if logged_in?
 
-      if name.empty?
-        flash[:message] = "*Please fill out name field"
+      if name.empty? || classification.empty? || description.empty? || planet.empty?
+        flash[:message] = "*Please fill out all fields"
         redirect to "/aliens/new"
-
-      elsif planet.empty?
-          flash[:message] = "*Please fill out planet field"
-          redirect to "/aliens/new"
 
       elsif Alien.find_by(name: name)
         flash[:message] = "*Alien already exists"

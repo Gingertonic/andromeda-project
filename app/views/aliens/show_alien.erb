@@ -21,7 +21,7 @@
         <p id="show-paragraph">Description:</p>
         <p id="show-paragraph"><%=@alien.description%></p>
         <p id="show-paragraph">Planet:</p>
-        <a href="/planets/<%=@alien.planet.slug%>"><br /><br /><%=@alien.planet.name%></a>
+        <a href="/planets/<%=@alien.planet.slug%>"><br /><br/><%=@alien.planet.name.titleize%></a>
 
         <a href="/aliens/<%=@alien.slug%>/edit"><span class="button" id="edit-button">Edit</span></a>
         <form action="/aliens/<%=@alien.slug%>" method="POST">

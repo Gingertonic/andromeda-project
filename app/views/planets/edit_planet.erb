@@ -14,16 +14,16 @@
     <div class="main">
 
       <div class="profile" id="create-edit">
-        <h1>Edit <%=@planet.name%></h1>
+        <h1>Edit <%=@planet.name.titleize%></h1>
 
         <div class="form">
           <form action="/planets/<%=@planet.slug%>" method="POST">
             <input id="hidden" type="hidden" name="_method" value="patch">
             <label>Name:</label><br />
-            <input type="text" name="name" value="<%=@planet.name%>" /><br /><br /><br />
+            <input type="text" name="name" value="<%=@planet.name.titleize%>" /><br /><br /><br />
 
             <label>Classification:</label><br />
-            <input type="text" name="classification" value="<%=@planet.classification%>" /><br /><br /><br />
+            <input type="text" name="classification" value="<%if @planet.classification%> <%=@planet.classification.titleize%><%end%>" /><br /><br /><br />
 
             <label>Description:</label><br />
             <textarea name="description"><%=@planet.description%></textarea><br /><br /><br />

@@ -44,14 +44,14 @@ class PlanetsController < ApplicationController
     if logged_in?
 
       if !name.empty? && !classification.empty? && !description.empty?
-        @planet = Planet.find_by_slug(params[:slug])
+        @planet = Planet.find_by_slug(slug)
         @planet.update(name: name, classification: classification, description: description)
         @planet.save
         redirect to "/planets/#{@planet.slug}"
       else
         flash[:message] = "*Please fill out all fields"
       end
-        @planet = Planet.find_by_slug(params[:slug])
+        @planet = Planet.find_by_slug(slug)
         redirect to "/planets/#{@planet.slug}/edit"
 
     else
