@@ -4,7 +4,7 @@ The Andromeda Project is a Sinatra web application that utilizes a database, Act
 
 ## Demo
 
-<img src="https://media.giphy.com/media/1rL4ujFNervQ0F3sAz/giphy.gif">
+<img src="https://imgur.com/a/6eBlB1L">
 
 ## Usage
 
