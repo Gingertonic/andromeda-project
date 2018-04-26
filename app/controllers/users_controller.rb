@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     user = User.find_by(username: username)
     if user && user.authenticate(password)
     session[:user_id] = user.id
-    redirect "/users/profile"
+    redirect "/users/#{current_user.user_slug}"
     elsif username.empty? || password.empty?
       flash[:message] = "*Please fill out each field"
     elsif !User.find_by(username: username)

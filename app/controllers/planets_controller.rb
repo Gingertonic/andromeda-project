@@ -85,7 +85,7 @@ class PlanetsController < ApplicationController
     if logged_in?
       @planet = Planet.find_by_slug(params[:slug])
       @planet.delete
-      redirect to "/profile"
+      redirect to "users/#{current_user.user_slug}"
     else
       redirect to "/"
     end

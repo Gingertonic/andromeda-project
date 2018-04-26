@@ -14,7 +14,7 @@
     <div class="main">
 
       <div class="profile" id="create-edit">
-        <h1>Edit <%=@alien.name%></h1>
+        <h1>Edit <%=@alien.name.titleize%></h1>
 
         <div class="form">
           <form action="/aliens/<%=@alien.slug%>" method="POST">

@@ -77,7 +77,7 @@ class AliensController < ApplicationController
     if logged_in?
       @alien = Alien.find_by_slug(params[:slug])
       @alien.delete
-      redirect to "/profile"
+      redirect to "users/#{current_user.user_slug}"
     else redirect to "/"
     end
   end
