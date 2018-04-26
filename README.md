@@ -2,6 +2,10 @@
 
 The Andromeda Project is a Sinatra web application that utilizes a database, ActiveRecord associations, and unique user accounts to allow users to create, edit, update, and delete planets and alien life forms. It is based around the fictional narrative that in the future, we are exploring the Andromeda Galaxy and adding new discoveries to our database.
 
+## Demo
+
+![Andromeda Project Demo GIF] (https://media.giphy.com/media/1rL4ujFNervQ0F3sAz/giphy.gif)
+
 ## Usage
 
 To use this application:
